@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 
-const WA_LINK = "https://wa.me/919444559071?text=Hello%20Gokul's%20Astrological%20Insights,%20I'm%20interested%20in%20Marriage%20Matching%20services.";
+import { SOCIAL_LINKS } from "../../../constants";
+const WA_LINK = `${SOCIAL_LINKS.whatsapp}?text=${encodeURIComponent("Hello Gokul's Astrological Insights, I'm interested in Marriage Matching services.")}`;
 
 export default function FinalCTA() {
   return (

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { SOCIAL_LINKS } from "../../../constants";
 
 const HOURS = Array.from({ length: 12 }, (_, i) => String(i + 1).padStart(2, "0"));
 const MINUTES = Array.from({ length: 60 }, (_, i) => String(i).padStart(2, "0"));
@@ -58,7 +59,7 @@ POB: ${form.groomPob}
 📱 WhatsApp: ${form.whatsapp}
 💬 Questions: ${form.questions}`;
 
-    window.open(`https://wa.me/919444559071?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`${SOCIAL_LINKS.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   return (

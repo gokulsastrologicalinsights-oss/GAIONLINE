@@ -78,7 +78,7 @@ export default function GemsPage() {
             Wearing the wrong gemstone can sometimes have adverse effects. Get a personalized gemstone recommendation based on your birth details.
           </p>
           <a 
-            href="/#contact" 
+            href="/services/online-consultation" 
             className="inline-block px-10 py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary-dark transition-colors shadow-lg"
           >
             Get Free Consultation

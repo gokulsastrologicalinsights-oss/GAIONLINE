@@ -1,8 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-
-const WHATSAPP_E164 = "919444559071";
+import { CONTACT_INFO } from "../constants";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -15,7 +14,7 @@ export default function ContactForm() {
       message.trim() && `Message: ${message.trim()}`,
     ].filter(Boolean);
     const text = lines.length ? lines.join("\n") : "Hello, I would like to book a consultation.";
-    const url = `https://wa.me/${WHATSAPP_E164}?text=${encodeURIComponent(text)}`;
+    const url = `https://wa.me/${CONTACT_INFO.whatsapp_num}?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank", "noopener,noreferrer");
   }
 

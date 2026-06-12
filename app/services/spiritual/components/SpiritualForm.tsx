@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { SOCIAL_LINKS } from "../../../constants";
 
 const services = [
   "Horoscope Remedy Analysis", "Career Growth Package", "Marriage Delay Package", "Business Growth Package",
@@ -32,7 +33,7 @@ export default function SpiritualForm({ selectedPackage }: SpiritualFormProps) {
 📱 WhatsApp: ${form.whatsapp}
 ❓ Problem: ${form.problem}`;
 
-    window.open(`https://wa.me/919444559071?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`${SOCIAL_LINKS.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   return (

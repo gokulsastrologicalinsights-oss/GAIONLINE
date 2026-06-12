@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { SOCIAL_LINKS } from "../../../constants";
 
 interface NumerologyFormProps {
   selectedType: "Basic" | "Advanced" | "";
@@ -32,7 +33,7 @@ export default function NumerologyForm({ selectedType }: NumerologyFormProps) {
 💼 Profession: ${form.profession}
 ❓ Question: ${form.question}`;
 
-    window.open(`https://wa.me/919444559071?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`${SOCIAL_LINKS.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   return (

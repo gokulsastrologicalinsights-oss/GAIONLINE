@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { SOCIAL_LINKS } from "../../../constants";
 
 const paymentMethods = [
   { id: "gpay", label: "Google Pay", icon: "🟢", upi: "gokulmurugan@okaxis" },
@@ -66,7 +67,7 @@ export default function PaymentSection() {
               />
             </div>
             <a
-              href="https://wa.me/919444559071?text=Hello%20Gokul's%20Astrological%20Insights,%20I%20have%20completed%20the%20payment%20of%20₹1001%20for%20online%20consultation.%20Please%20find%20my%20payment%20screenshot%20attached."
+              href={`${SOCIAL_LINKS.whatsapp}?text=${encodeURIComponent("Hello Gokul's Astrological Insights, I have completed the payment of ₹1001 for online consultation. Please find my payment screenshot attached.")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="oc-btn-wa oc-btn-full"

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { SOCIAL_LINKS } from "../../../constants";
 
 // Generate hours 1–12
 const HOURS = Array.from({ length: 12 }, (_, i) => String(i + 1).padStart(2, "0"));
@@ -37,7 +38,7 @@ export default function ConsultationForm() {
 📌 Current Location: ${form.location}
 💍 Marital Status: ${form.marital}
 ❓ Question: ${form.question}`;
-    window.open(`https://wa.me/919444559071?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`${SOCIAL_LINKS.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   return (

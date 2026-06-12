@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { SOCIAL_LINKS } from "../../../constants";
 import { Gemstone } from "./GemstoneGrid";
 
 interface GemstoneModalProps {
@@ -42,7 +43,7 @@ export default function GemstoneModal({ gemstone, onClose }: GemstoneModalProps)
 📱 WhatsApp: ${form.whatsapp}
 📌 Location: ${form.location}`;
 
-    window.open(`https://wa.me/919444559071?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`${SOCIAL_LINKS.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   return (
@@ -116,7 +117,7 @@ export default function GemstoneModal({ gemstone, onClose }: GemstoneModalProps)
           <div className="gs-guidance-box">
             <p>Need astrology guidance before choosing?</p>
             <div className="gs-modal-btns">
-              <a href="https://wa.me/919444559071?text=I%20need%20astrology%20guidance%20for%20choosing%20a%20gemstone." target="_blank" className="gs-btn-outline gs-btn-full">Yes, Need Consultation</a>
+              <a href={`${SOCIAL_LINKS.whatsapp}?text=${encodeURIComponent("I need astrology guidance for choosing a gemstone.")}`} target="_blank" className="gs-btn-outline gs-btn-full">Yes, Need Consultation</a>
               <button type="submit" className="gs-btn-primary gs-btn-full">Continue Purchase</button>
             </div>
           </div>

@@ -1,8 +1,9 @@
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
-import Contact from "./components/Contact";
+import WhyChooseUs from "./components/WhyChooseUs";
 import Testimonials from "./components/Testimonials";
+import Contact from "./components/Contact";
 
 export default function Home() {
   return (
@@ -10,8 +11,9 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
-      <Contact />
+      <WhyChooseUs />
       <Testimonials />
+      <Contact />
     </div>
   );
 }

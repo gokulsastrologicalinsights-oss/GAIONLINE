@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { SOCIAL_LINKS } from "../../../constants";
 
 const reportList = [
   "Single Page Horoscope Snapshot", "Marriage Biodata PDF", "Gemstone Recommendation PDF",
@@ -33,7 +34,7 @@ export default function ReportForm({ initialReport }: ReportFormProps) {
 📱 WhatsApp: ${form.whatsapp}
 ❓ Question: ${form.question}`;
 
-    window.open(`https://wa.me/919444559071?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`${SOCIAL_LINKS.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   return (

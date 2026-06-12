@@ -1,11 +1,5 @@
 import ContactForm from "./ContactForm";
-
-const PHONE_DISPLAY = "+91 9444 55 9071";
-const PHONE_TEL = "+919444559071";
-const WHATSAPP_E164 = "919444559071";
-const EMAIL = "gokulsastrologicalinsights@gmail.com";
-const INSTAGRAM_URL = "https://www.instagram.com/";
-const FACEBOOK_URL = "https://www.facebook.com/";
+import { SOCIAL_LINKS, CONTACT_INFO } from "../constants";
 
 export default function Contact() {
   return (
@@ -56,7 +50,7 @@ export default function Contact() {
               <ul className="space-y-4">
                 <li>
                   <a
-                    href={`tel:${PHONE_TEL}`}
+                    href={`tel:${CONTACT_INFO.phone_tel}`}
                     className="flex items-center gap-4 p-4 rounded-md bg-white border border-border-subtle hover:border-primary-light hover:shadow-md transition-all group"
                   >
                     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
@@ -70,14 +64,14 @@ export default function Contact() {
                       </svg>
                     </span>
                     <div>
-                      <p className="text-text-sub text-xs font-medium uppercase tracking-wide">Phone / WhatsApp</p>
-                      <p className="text-text-main text-lg md:text-xl font-semibold">{PHONE_DISPLAY}</p>
+                      <p className="text-text-sub text-xs font-medium uppercase tracking-wide">Phone</p>
+                      <p className="text-text-main text-lg md:text-xl font-semibold">{CONTACT_INFO.phone}</p>
                     </div>
                   </a>
                 </li>
                 <li>
                   <a
-                    href={`mailto:${EMAIL}`}
+                    href={`mailto:${CONTACT_INFO.email}`}
                     className="flex items-center gap-4 p-4 rounded-md bg-white border border-border-subtle hover:border-primary-light hover:shadow-md transition-all group"
                   >
                     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
@@ -92,13 +86,13 @@ export default function Contact() {
                     </span>
                     <div className="min-w-0">
                       <p className="text-text-sub text-xs font-medium uppercase tracking-wide">Email</p>
-                      <p className="text-text-main text-base md:text-lg font-semibold break-all">{EMAIL}</p>
+                      <p className="text-text-main text-base md:text-lg font-semibold break-all">{CONTACT_INFO.email}</p>
                     </div>
                   </a>
                 </li>
                 <li>
                   <a
-                    href={`https://wa.me/${WHATSAPP_E164}`}
+                    href={SOCIAL_LINKS.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 p-4 rounded-md bg-white border border-border-subtle hover:border-[#25D366] hover:shadow-md transition-all group"
@@ -109,14 +103,14 @@ export default function Contact() {
                       </svg>
                     </span>
                     <div>
-                      <p className="text-text-sub text-xs font-medium uppercase tracking-wide">WhatsApp</p>
-                      <p className="text-[#128C7E] text-lg md:text-xl font-semibold">Chat with us instantly</p>
+                      <p className="text-text-sub text-xs font-medium uppercase tracking-wide">📱 WhatsApp</p>
+                      <p className="text-[#128C7E] text-base md:text-lg font-semibold">{SOCIAL_LINKS.whatsapp_display}</p>
                     </div>
                   </a>
                 </li>
                 <li>
                   <a
-                    href={INSTAGRAM_URL}
+                    href={SOCIAL_LINKS.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 p-4 rounded-md bg-white border border-border-subtle hover:border-[#E4405F] hover:shadow-md transition-all group"
@@ -127,14 +121,14 @@ export default function Contact() {
                       </svg>
                     </span>
                     <div>
-                      <p className="text-text-sub text-xs font-medium uppercase tracking-wide">Instagram</p>
-                      <p className="text-[#E4405F] text-lg md:text-xl font-semibold">Follow Gokul&apos;s Astrological Insights</p>
+                      <p className="text-text-sub text-xs font-medium uppercase tracking-wide">📸 Instagram</p>
+                      <p className="text-[#E4405F] text-base md:text-lg font-semibold">{SOCIAL_LINKS.instagram_handle}</p>
                     </div>
                   </a>
                 </li>
                 <li>
                   <a
-                    href={FACEBOOK_URL}
+                    href={SOCIAL_LINKS.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 p-4 rounded-md bg-white border border-border-subtle hover:border-[#1877F2] hover:shadow-md transition-all group"
@@ -145,8 +139,8 @@ export default function Contact() {
                       </svg>
                     </span>
                     <div>
-                      <p className="text-text-sub text-xs font-medium uppercase tracking-wide">Facebook</p>
-                      <p className="text-[#1877F2] text-lg md:text-xl font-semibold">Like our page</p>
+                      <p className="text-text-sub text-xs font-medium uppercase tracking-wide">👍 Facebook</p>
+                      <p className="text-[#1877F2] text-base md:text-lg font-semibold">{SOCIAL_LINKS.facebook_display}</p>
                     </div>
                   </a>
                 </li>

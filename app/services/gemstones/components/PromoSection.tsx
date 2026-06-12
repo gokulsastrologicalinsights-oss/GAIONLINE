@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 
-const WA_LINK = "https://wa.me/919444559071?text=Hello%20Gokul's%20Astrological%20Insights,%20I'm%20interested%20in%20a%20gemstone%20with%20the%20free%20wearing%20guide.";
+import { SOCIAL_LINKS } from "../../../constants";
+const WA_LINK = `${SOCIAL_LINKS.whatsapp}?text=${encodeURIComponent("Hello Gokul's Astrological Insights, I'm interested in a gemstone with the free wearing guide.")}`;
 
 const guidePoints = [
   { icon: "📄", text: "FREE Detailed Gemstone PDF Guide" },
