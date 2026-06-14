@@ -2,13 +2,18 @@
 import React, { useState } from "react";
 import { SOCIAL_LINKS, CONTACT_INFO } from "../../constants";
 import HeroSection from "./components/HeroSection";
+import WhyMatchingMatters from "./components/WhyMatchingMatters";
 import MatchingTypes from "./components/MatchingTypes";
 import ProcessTimeline from "./components/ProcessTimeline";
+import WhoShouldUse from "./components/WhoShouldUse";
+import WhatYouReceive from "./components/WhatYouReceive";
 import MatchingForm from "./components/MatchingForm";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Testimonials from "./components/Testimonials";
 import FAQSection from "./components/FAQSection";
+import TrustSection from "./components/TrustSection";
 import FinalCTA from "./components/FinalCTA";
+import StickyMobileCTA from "./components/StickyMobileCTA";
 import "./marriage-matching.css";
 
 export default function MarriageMatchingPage() {
@@ -28,12 +33,16 @@ export default function MarriageMatchingPage() {
   return (
     <div className="mm-root">
       <HeroSection />
+      <WhyMatchingMatters />
       <MatchingTypes onSelect={handleSelectType} />
       <ProcessTimeline />
+      <WhoShouldUse />
+      <WhatYouReceive />
       <MatchingForm selectedType={selectedType} />
       <WhyChooseUs />
       <Testimonials />
       <FAQSection />
+      <TrustSection />
       <FinalCTA />
 
       <footer className="mm-footer">
@@ -73,6 +82,7 @@ export default function MarriageMatchingPage() {
           </div>
         </div>
       </footer>
+      <StickyMobileCTA />
     </div>
   );
 }
