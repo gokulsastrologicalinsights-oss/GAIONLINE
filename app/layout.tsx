@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   description:
     "Trusted astrology consultations: Jathagam analysis, Marriage Matching (Porutham), Name Selection, and Vastu. Call / WhatsApp +91 9444 55 9071.",
   icons: {
-    icon: [{ url: "/images/logo/GAI-Logo-v3.jpg", type: "image/jpeg" }],
-    apple: "/images/logo/GAI-Logo-v3.jpg",
+    icon: [{ url: "/images/logo/GAI-Logo-v5.png", type: "image/png" }],
+    apple: "/images/logo/GAI-Logo-v5.png",
   },
   openGraph: {
     title: "Gokul's Astrological Insights | Astrology, Jathagam & Vastu",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "Gokul's Astrological Insights",
     images: [
       {
-        url: "/images/logo/GAI-Logo-v3.jpg",
+        url: "/images/logo/GAI-Logo-v5.png",
         width: 800,
         height: 800,
       },
@@ -52,7 +52,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Gokul's Astrological Insights",
-    "image": "https://gokulsastrologicalinsights.com/images/logo/GAI-Logo-v3.jpg",
+    "image": "https://gokulsastrologicalinsights.com/images/logo/GAI-Logo-v5.png",
     "@id": "https://gokulsastrologicalinsights.com/#professional-service",
     "url": "https://gokulsastrologicalinsights.com",
     "telephone": CONTACT_INFO.phone_tel,

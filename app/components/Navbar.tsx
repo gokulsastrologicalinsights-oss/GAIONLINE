@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { SOCIAL_LINKS, CONTACT_INFO } from "../constants";
 
-const LOGO_SRC = "/images/logo/GAI-Logo-v3.jpg";
+const LOGO_SRC = "/images/logo/GAI-Logo-v5.png";
 
 const SERVICES_SUB_MENU = [
   { name: "Online Consultation", href: "/services/online-consultation" },

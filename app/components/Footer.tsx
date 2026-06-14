@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Phone, Mail, MapPin, Sparkles } from "lucide-react";
 import { SOCIAL_LINKS, CONTACT_INFO } from "../constants";
 
-const LOGO_SRC = "/images/logo/GAI-Logo-v3.jpg";
+const LOGO_SRC = "/images/logo/GAI-Logo-v5.png";
 
 export default function Footer() {
   const year = new Date().getFullYear();
