@@ -92,11 +92,11 @@ export default function Footer() {
                   <span>&bull;</span> Career Guidance
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/services/spiritual" className="text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 font-semibold">
                   <span>&bull;</span> Pariharam Solutions
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 

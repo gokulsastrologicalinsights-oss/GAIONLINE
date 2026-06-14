@@ -27,13 +27,13 @@ const SERVICES: ServiceItem[] = [
     href: "/services/marriage-matching",
     icon: <Heart className="w-6 h-6 text-primary" />,
   },
-  {
-    title: "Numerology",
-    emoji: "🔢",
-    description: "Life path and personality analysis through numbers.",
-    href: "/services/numerology",
-    icon: <Hash className="w-6 h-6 text-primary" />,
-  },
+  // {
+  //   title: "Numerology",
+  //   emoji: "🔢",
+  //   description: "Life path and personality analysis through numbers.",
+  //   href: "/services/numerology",
+  //   icon: <Hash className="w-6 h-6 text-primary" />,
+  // },
   {
     title: "Gemstone Recommendation",
     emoji: "💎",
@@ -41,13 +41,13 @@ const SERVICES: ServiceItem[] = [
     href: "/services/gemstones",
     icon: <Gem className="w-6 h-6 text-primary" />,
   },
-  {
-    title: "Remedies & Pariharams",
-    emoji: "🕉",
-    description: "Simple and practical remedies for life challenges.",
-    href: "/services/spiritual",
-    icon: <Sparkles className="w-6 h-6 text-primary" />,
-  },
+  // {
+  //   title: "Remedies & Pariharams",
+  //   emoji: "🕉",
+  //   description: "Simple and practical remedies for life challenges.",
+  //   href: "/services/spiritual",
+  //   icon: <Sparkles className="w-6 h-6 text-primary" />,
+  // },
   {
     title: "Detailed Horoscope Reading",
     emoji: "🔮",

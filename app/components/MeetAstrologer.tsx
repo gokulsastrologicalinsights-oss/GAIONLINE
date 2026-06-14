@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Star, Moon, Sun, Award, User } from "lucide-react";
+import Image from "next/image";
 
 export default function MeetAstrologer() {
   return (
@@ -30,10 +31,17 @@ export default function MeetAstrologer() {
           transition={{ duration: 0.6 }}
           className="relative w-64 h-64 md:w-80 md:h-80 shrink-0 mx-auto md:mx-0"
         >
-          {/* Circular Profile Image Placeholder */}
-          <div className="w-full h-full rounded-full bg-gradient-to-br from-primary/40 to-slate-800 p-2 shadow-[0_0_50px_rgba(59,130,246,0.15)] border border-white/10 backdrop-blur-sm relative flex items-center justify-center overflow-hidden">
-            <div className="w-full h-full rounded-full bg-slate-800/80 flex items-center justify-center">
-              <User className="w-32 h-32 text-slate-500" />
+          {/* Circular Profile Image */}
+          <div className="w-full h-full rounded-full bg-gradient-to-br from-primary/40 to-slate-800 p-2 shadow-[0_0_50px_rgba(59,130,246,0.15)] border border-white/10 backdrop-blur-sm relative flex items-center justify-center overflow-hidden group">
+            <div className="w-full h-full rounded-full bg-slate-800/80 flex items-center justify-center overflow-hidden relative">
+              <Image 
+                src="/images/Gokul-Main.png" 
+                alt="Gokul Murugan" 
+                fill
+                sizes="(max-width: 768px) 16rem, 20rem"
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                priority
+              />
             </div>
           </div>
 

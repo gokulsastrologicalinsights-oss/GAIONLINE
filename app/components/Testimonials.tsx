@@ -15,25 +15,39 @@ interface Testimonial {
 
 const TESTIMONIALS: Testimonial[] = [
   {
-    name: "Ramesh Kumar",
-    location: "Chennai",
-    text: "Very accurate predictions and excellent guidance. Astrologer Gokul's Jathagam analysis helped me clear my career doubts completely.",
+    name: "Thushitha Sureshkumar Sureshkumar",
+    location: "Google Review",
+    text: "I recently had a horoscope reading done by Mr Gollum, the astrologer, and I wanted to share my exceptional experience. His reading was both precise and accurate, addressing all of my questions with great detail. I was thoroughly satisfied with his service and appreciated his insights. If you're considering a horoscope reading, I highly recommend Mr Gokul for a professional and insightful experience.",
     rating: 5,
-    avatar: "/images/client-1.png",
+    avatar: "/images/client-thusitha.png",
   },
   {
-    name: "Anand Krishnan",
-    location: "Bangalore",
-    text: "Professional and quick response. He patiently answered all my questions regarding property purchase pariharams. Highly recommended!",
+    name: "Bala Raman",
+    location: "Google Review",
+    text: "I had an online astrology session today, and it was truly amazing! The predictions were very accurate, and the guidance felt personal and clear. Highly recommend this astrologer for genuine insights.",
     rating: 5,
-    avatar: "/images/client-3.png",
+    avatar: "/images/client-balaraman.png",
   },
   {
-    name: "Priyadarshini S.",
-    location: "Coimbatore",
-    text: "Marriage matching service was very helpful. The details and checks they perform are very thorough and gave us great peace of mind.",
+    name: "S.Bhuvaneswari",
+    location: "Google Review",
+    text: "He is giving a clear cut view of the question what we raise. He will what we expect will happen or not. Worth for the dhakshinai",
     rating: 5,
-    avatar: "/images/client-2.png",
+    avatar: "/images/client-bhuvaneshwari.png",
+  },
+  {
+    name: "james p",
+    location: "Google Review",
+    text: "All information provided was similar and was happened in my life... People can trust and check your prediction..",
+    rating: 5,
+    avatar: "/images/client-james.png",
+  },
+  {
+    name: "Dharshini Sundar",
+    location: "Google Review",
+    text: "Such great astrological insights and predictions, Truly impressive and accurate✨",
+    rating: 5,
+    avatar: "/images/client-dharshini.png",
   },
 ];
 

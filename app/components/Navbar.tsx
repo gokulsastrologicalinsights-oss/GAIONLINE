@@ -11,9 +11,9 @@ const LOGO_SRC = "/images/logo/GAI-Logo-v5.png";
 const SERVICES_SUB_MENU = [
   { name: "Online Consultation", href: "/services/online-consultation" },
   { name: "Marriage Matching", href: "/services/marriage-matching" },
-  { name: "Numerology", href: "/services/numerology" },
+  // { name: "Numerology", href: "/services/numerology" },
   { name: "Gemstones", href: "/services/gemstones" },
-  { name: "Spiritual Services", href: "/services/spiritual" },
+  // { name: "Spiritual Services", href: "/services/spiritual" },
   { name: "Astrology Reports", href: "/services/reports" },
 ];
 
