@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Phone, Mail, MapPin, Sparkles } from "lucide-react";
 import { SOCIAL_LINKS, CONTACT_INFO } from "../constants";
 
-const LOGO_SRC = "/images/logo/GAI-Logo-v2.png";
+const LOGO_SRC = "/images/logo/GAI-Logo-v3.jpg";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -54,7 +54,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#about" className="text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 font-semibold">
+                <Link href="/about" className="text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 font-semibold">
                   <span>&bull;</span> About Us
                 </Link>
               </li>

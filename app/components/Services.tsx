@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Eye, Heart, Briefcase, Home, DollarSign, Sparkles } from "lucide-react";
+import { Eye, Heart, Monitor, Hash, Gem, Sparkles } from "lucide-react";
 
 interface ServiceItem {
   title: string;
@@ -14,46 +14,46 @@ interface ServiceItem {
 
 const SERVICES: ServiceItem[] = [
   {
-    title: "Horoscope Reading",
-    emoji: "🔮",
-    description: "Detailed horoscope analysis covering planetary alignments, rasi/nakshatra insights, and life event predictions.",
-    href: "/services/reports",
-    icon: <Eye className="w-6 h-6 text-primary" />,
+    title: "Online Consultation",
+    emoji: "💻",
+    description: "Personalized horoscope guidance and predictions.",
+    href: "/services/online-consultation",
+    icon: <Monitor className="w-6 h-6 text-primary" />,
   },
   {
     title: "Marriage Matching",
     emoji: "💑",
-    description: "In-depth compatibility matching (Porutham) checking for planetary positions and prospective doshas.",
+    description: "Traditional horoscope compatibility analysis.",
     href: "/services/marriage-matching",
     icon: <Heart className="w-6 h-6 text-primary" />,
   },
   {
-    title: "Career Guidance",
-    emoji: "💼",
-    description: "Sincere career advice on job promotions, industry shifts, business opportunities, and timing of success.",
-    href: "/services/online-consultation",
-    icon: <Briefcase className="w-6 h-6 text-primary" />,
+    title: "Numerology",
+    emoji: "🔢",
+    description: "Life path and personality analysis through numbers.",
+    href: "/services/numerology",
+    icon: <Hash className="w-6 h-6 text-primary" />,
   },
   {
-    title: "Property & Vehicle Predictions",
-    emoji: "🏠",
-    description: "Auspicious timings for purchasing land, homes, or vehicles aligned with your planetary transit cycles.",
-    href: "/services/reports",
-    icon: <Home className="w-6 h-6 text-primary" />,
+    title: "Gemstone Recommendation",
+    emoji: "💎",
+    description: "Suitable gemstone suggestions based on birth charts.",
+    href: "/services/gemstones",
+    icon: <Gem className="w-6 h-6 text-primary" />,
   },
   {
-    title: "Finance Analysis",
-    emoji: "💰",
-    description: "Personalized wealth predictions, debt recovery timelines, and investment prospects based on your chart.",
-    href: "/services/online-consultation",
-    icon: <DollarSign className="w-6 h-6 text-primary" />,
-  },
-  {
-    title: "Pariharam Solutions",
+    title: "Remedies & Pariharams",
     emoji: "🕉",
-    description: "Traditional remedies, planetary pariharams, and spiritual guidance to alleviate life struggles.",
+    description: "Simple and practical remedies for life challenges.",
     href: "/services/spiritual",
     icon: <Sparkles className="w-6 h-6 text-primary" />,
+  },
+  {
+    title: "Detailed Horoscope Reading",
+    emoji: "🔮",
+    description: "Comprehensive analysis of various life aspects.",
+    href: "/services/reports",
+    icon: <Eye className="w-6 h-6 text-primary" />,
   },
 ];
 
@@ -79,7 +79,7 @@ export default function Services() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mb-16 max-w-5xl mx-auto">
           {SERVICES.map((service, index) => (
             <motion.div
               key={index}

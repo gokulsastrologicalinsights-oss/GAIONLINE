@@ -209,7 +209,7 @@ export default function ContactClientPage() {
         "@type": "LocalBusiness",
         "@id": "https://gokulsastrologicalinsights.com/#local-business",
         "name": "Gokul's Astrological Insights",
-        "image": "https://gokulsastrologicalinsights.com/images/logo/GAI-Logo-v2.png",
+        "image": "https://gokulsastrologicalinsights.com/images/logo/GAI-Logo-v3.jpg",
         "telephone": CONTACT_INFO.phone_tel,
         "email": CONTACT_INFO.email,
         "address": {
@@ -224,7 +224,7 @@ export default function ContactClientPage() {
         "@type": "ProfessionalService",
         "@id": "https://gokulsastrologicalinsights.com/#professional-service",
         "name": "Gokul's Astrological Insights",
-        "image": "https://gokulsastrologicalinsights.com/images/logo/GAI-Logo-v2.png",
+        "image": "https://gokulsastrologicalinsights.com/images/logo/GAI-Logo-v3.jpg",
         "telephone": CONTACT_INFO.phone_tel,
         "email": CONTACT_INFO.email,
         "priceRange": "$$",

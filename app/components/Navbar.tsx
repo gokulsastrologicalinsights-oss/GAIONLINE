@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { SOCIAL_LINKS, CONTACT_INFO } from "../constants";
 
-const LOGO_SRC = "/images/logo/GAI-Logo-v2.png";
+const LOGO_SRC = "/images/logo/GAI-Logo-v3.jpg";
 
 const SERVICES_SUB_MENU = [
   { name: "Online Consultation", href: "/services/online-consultation" },
@@ -74,7 +74,7 @@ export default function Navbar() {
               Home
             </Link>
             <Link
-              href="#about"
+              href="/about"
               className="text-text-main/80 font-bold text-sm tracking-wide hover:text-primary transition-colors duration-300"
             >
               About Us
@@ -206,7 +206,7 @@ export default function Navbar() {
               Home
             </Link>
             <Link
-              href="#about"
+              href="/about"
               onClick={() => setIsOpen(false)}
               className="block px-4 py-2.5 rounded-lg text-base font-bold text-text-main hover:text-primary hover:bg-primary/5 transition-colors duration-300"
             >

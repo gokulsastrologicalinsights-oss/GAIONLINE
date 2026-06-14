@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { UserCheck, Star, ShieldCheck, Lock, Globe, Zap } from "lucide-react";
+import { Star, Lock, Sparkles, ShieldCheck, Globe, Headset } from "lucide-react";
 
 interface PointItem {
   title: string;
@@ -12,34 +12,34 @@ interface PointItem {
 
 const POINTS: PointItem[] = [
   {
-    title: "Personalized Predictions",
-    description: "Tailored to your specific birth chart for exact, personalized solutions.",
-    icon: <UserCheck className="w-5 h-5 text-primary" />,
-  },
-  {
-    title: "Traditional Tamil Astrology",
-    description: "Rooted in ancient Vedic texts and time-tested Tamil astrological principles.",
+    title: "Authentic Vedic Astrology Principles",
+    description: "Deeply rooted in ancient traditional wisdom and accurate celestial calculations.",
     icon: <Star className="w-5 h-5 text-primary" />,
   },
   {
-    title: "Trusted Guidance",
-    description: "Honest, direct, and practical remedies designed to help you succeed.",
-    icon: <ShieldCheck className="w-5 h-5 text-primary" />,
-  },
-  {
-    title: "Confidential Consultation",
-    description: "Your birth details and personal consultations are kept strictly private.",
+    title: "Personalized and Confidential Consultations",
+    description: "Your details and readings are kept completely private and tailored strictly to you.",
     icon: <Lock className="w-5 h-5 text-primary" />,
   },
   {
-    title: "Online Services Available",
-    description: "Connect comfortably from anywhere via phone call or video meet.",
+    title: "Practical and Easy-to-Follow Remedies",
+    description: "Simple, realistic, and effective pariharams to overcome your daily life hurdles.",
+    icon: <Sparkles className="w-5 h-5 text-primary" />,
+  },
+  {
+    title: "Ethical and Transparent Guidance",
+    description: "Honest and straightforward predictions without any fear-mongering or false promises.",
+    icon: <ShieldCheck className="w-5 h-5 text-primary" />,
+  },
+  {
+    title: "Online Services Available Worldwide",
+    description: "Access reliable astrological consultations from anywhere across the globe.",
     icon: <Globe className="w-5 h-5 text-primary" />,
   },
   {
-    title: "Quick Response",
-    description: "Direct coordination and prompt replies to address your enquiries.",
-    icon: <Zap className="w-5 h-5 text-primary" />,
+    title: "Customer-Focused Support",
+    description: "Dedicated support to ensure all your queries and concerns are promptly addressed.",
+    icon: <Headset className="w-5 h-5 text-primary" />,
   },
 ];
 
@@ -50,7 +50,7 @@ export default function WhyChooseUs() {
         {/* Title */}
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-primary font-bold mb-4">
-            Why Choose Us
+            Why Choose Gokul&apos;s Astrological Insights?
           </h2>
           <div className="flex items-center justify-center space-x-3 mb-6 opacity-75">
             <div className="h-[1px] w-8 border-t border-primary"></div>
