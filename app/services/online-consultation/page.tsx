@@ -10,6 +10,7 @@ import Testimonials from "./components/Testimonials";
 import FAQSection from "./components/FAQSection";
 import FinalCTA from "./components/FinalCTA";
 import StickyCTA from "./components/StickyCTA";
+import SocialConnect from "./components/SocialConnect";
 import "./consultation.css";
 
 import { SOCIAL_LINKS, CONTACT_INFO } from "../../constants";
@@ -35,6 +36,7 @@ export default function OnlineConsultationPage() {
       <FAQSection />
       <FinalCTA />
       <StickyCTA />
+      <SocialConnect />
 
       <footer className="oc-page-footer">
         <div className="oc-container">
