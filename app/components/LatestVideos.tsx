@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Play, ChevronLeft, ChevronRight } from "lucide-react";
-import { SOCIAL_LINKS } from "../constants";
 
 interface Video {
   title: string;
@@ -64,17 +63,15 @@ export default function LatestVideos() {
   }, []);
 
   const maxIndex = Math.max(0, VIDEOS.length - visibleCards);
+  const activeIndex = Math.min(currentIndex, maxIndex);
 
   useEffect(() => {
-    if (maxIndex === 0) {
-      setCurrentIndex(0);
-      return;
-    }
+    if (maxIndex === 0) return;
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
     }, 5000);
     return () => clearInterval(timer);
-  }, [currentIndex, maxIndex]);
+  }, [maxIndex]);
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
@@ -114,7 +111,7 @@ export default function LatestVideos() {
           {/* Slider Viewport */}
           <div className="overflow-hidden w-full">
             <motion.div
-              animate={{ x: `-${currentIndex * (100 / visibleCards)}%` }}
+              animate={{ x: `-${activeIndex * (100 / visibleCards)}%` }}
               transition={{ type: "spring", stiffness: 150, damping: 25 }}
               className="flex"
               style={{
@@ -213,7 +210,7 @@ export default function LatestVideos() {
                     key={i}
                     onClick={() => setCurrentIndex(i)}
                     className={`h-2.5 rounded-full transition-all duration-300 focus:outline-none cursor-pointer ${
-                      currentIndex === i
+                      activeIndex === i
                         ? "w-8 bg-primary"
                         : "w-2.5 bg-slate-200 hover:bg-slate-300"
                     }`}

@@ -34,7 +34,7 @@ export default function BlogIndexPage() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="text-primary font-bold text-sm uppercase tracking-widest block mb-2">✦ Gokul's Astrological Insights ✦</span>
+          <span className="text-primary font-bold text-sm uppercase tracking-widest block mb-2">✦ {"Gokul's Astrological Insights"} ✦</span>
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6">Astrology Journal &amp; Articles</h1>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto">
             Deep dive into Vedic astrology, compatibility secrets, name numerology, and remedies compiled by expert astrologer Gokul Murugan.

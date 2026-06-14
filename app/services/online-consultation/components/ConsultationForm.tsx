@@ -9,7 +9,7 @@ const MINUTES = Array.from({ length: 60 }, (_, i) => String(i).padStart(2, "0"))
 
 export default function ConsultationForm() {
   const [form, setForm] = useState({
-    name: "", dob: "", pob: "", location: "", marital: "", question: "",
+    name: "", dob: "", pob: "", location: "", marital: "", question: "", tier: "Detailed",
   });
   const [hour, setHour] = useState("");
   const [minute, setMinute] = useState("");
@@ -20,7 +20,6 @@ export default function ConsultationForm() {
   };
 
   const formatDOB = (raw: string) => {
-    // raw is YYYY-MM-DD from date input, convert to DD/MM/YYYY
     if (!raw) return "";
     const [y, m, d] = raw.split("-");
     return `${d}/${m}/${y}`;
@@ -29,7 +28,9 @@ export default function ConsultationForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const tob = hour && minute ? `${hour}:${minute} ${ampm}` : "Not provided";
-    const msg = `Hello Gokul's Astrological Insights, I have submitted my details for the ₹1001 online consultation.
+    const price = form.tier === "Basic" ? "₹501" : form.tier === "Premium" ? "₹1501" : "₹1001";
+    
+    const msg = `Hello Gokul's Astrological Insights, I have submitted my details for the ${form.tier} Consultation (${price}).
 
 👤 Name: ${form.name}
 📅 DOB: ${formatDOB(form.dob)}
@@ -126,6 +127,16 @@ export default function ConsultationForm() {
                 <option value="Married">Married</option>
                 <option value="Divorced">Divorced</option>
                 <option value="Widowed">Widowed</option>
+              </select>
+            </div>
+
+            {/* Consultation Type */}
+            <div className="oc-form-group">
+              <label className="oc-label">🔮 Consultation Type *</label>
+              <select required name="tier" value={form.tier} onChange={handleChange} className="oc-input oc-select">
+                <option value="Detailed">Detailed Consultation (₹1001)</option>
+                <option value="Basic">Basic Consultation (₹501)</option>
+                <option value="Premium">Premium Consultation (₹1501)</option>
               </select>
             </div>
           </div>

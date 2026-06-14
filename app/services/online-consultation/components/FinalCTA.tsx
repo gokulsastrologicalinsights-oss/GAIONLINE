@@ -1,28 +1,55 @@
 "use client";
 
-import { SOCIAL_LINKS } from "../../../constants";
-const WA_LINK = `${SOCIAL_LINKS.whatsapp}?text=${encodeURIComponent("Hello Gokul's Astrological Insights, I want to book an online consultation.")}`;
+import { Check, Calendar } from "lucide-react";
 
 export default function FinalCTA() {
   return (
-    <section className="oc-final-cta">
-      <div className="oc-cta-glow" />
-      <div className="oc-container oc-cta-inner">
-        <div className="oc-cta-stars" aria-hidden="true">
-          {["♈","♉","♊","♋","♌","♍","♎","♏","♐","♑","♒","♓"].map(z => (
-            <span key={z} className="oc-cta-zodiac">{z}</span>
+    <section className="relative w-full py-16 md:py-20 bg-gradient-to-b from-white to-surface-light border-t border-slate-100 flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden select-none">
+      {/* Faint ambient glow inside section */}
+      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,rgba(54,61,133,0.05)_0%,transparent_70%)] pointer-events-none" />
+
+      <div className="relative z-10 max-w-2xl mx-auto text-center flex flex-col items-center">
+        {/* Subtle decorative tag */}
+        <span className="inline-block font-bold text-xs sm:text-sm uppercase tracking-wider text-primary bg-primary/5 px-4 py-1.5 rounded-full border border-primary/10 mb-4 select-none">
+          ✦ Quality Astrology Guidance ✦
+        </span>
+
+        {/* Heading */}
+        <h2 className="text-primary text-3xl sm:text-4xl font-serif font-extrabold mb-4 tracking-tight leading-tight">
+          Limited Daily Appointments
+        </h2>
+
+        {/* Description */}
+        <p className="text-text-sub text-base sm:text-lg mb-8 leading-relaxed max-w-xl mx-auto">
+          To ensure personalized attention and quality guidance, only a limited number of consultations are accepted each day.
+        </p>
+
+        {/* Benefit Checklist */}
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mb-8 text-left justify-center w-full max-w-lg mx-auto border-t border-b border-slate-200/50 py-5 select-none">
+          {[
+            "Advance Booking Recommended",
+            "Personalized Attention",
+            "Flexible Appointment Scheduling",
+          ].map((item, idx) => (
+            <div key={idx} className="flex items-center gap-2">
+              <div className="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-100 shadow-3xs">
+                <Check className="w-3 h-3 stroke-[3]" />
+              </div>
+              <span className="text-text-main font-bold text-xs sm:text-sm tracking-wide">
+                {item}
+              </span>
+            </div>
           ))}
         </div>
-        <span className="oc-section-tag">✦ Begin Your Journey ✦</span>
-        <h2 className="oc-cta-h2">Ready For Your Personalized<br /><span className="oc-gold">Astrology Consultation?</span></h2>
-        <p className="oc-cta-sub">Understand your life path through accurate astrology guidance. Your stars have answers — let us reveal them.</p>
-        <div className="oc-cta-btns">
-          <a href="#form" className="oc-btn-primary oc-btn-large">✦ Book Consultation</a>
-          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="oc-btn-wa oc-btn-large">
-            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.548 4.107 1.51 5.836L.057 23.999l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.37l-.36-.214-3.733.979.997-3.645-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
-            WhatsApp Now
-          </a>
-        </div>
+
+        {/* CTA Schedule Button */}
+        <a
+          href="#form"
+          className="px-8 py-3.5 bg-primary hover:bg-primary-light text-white font-extrabold rounded-xl shadow-md shadow-primary/20 hover:shadow-lg hover:scale-[1.01] active:scale-99 transition-all duration-300 text-center text-sm sm:text-base tracking-wide flex items-center justify-center gap-2 cursor-pointer"
+        >
+          <Calendar className="w-4.5 h-4.5 stroke-[2.5]" />
+          <span>Schedule Your Consultation</span>
+        </a>
       </div>
     </section>
   );

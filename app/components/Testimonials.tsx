@@ -41,13 +41,6 @@ export default function Testimonials() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      handleNext();
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [index]);
-
   const handlePrev = () => {
     setDirection(-1);
     setIndex((prevIndex) => (prevIndex === 0 ? TESTIMONIALS.length - 1 : prevIndex - 1));
@@ -57,6 +50,13 @@ export default function Testimonials() {
     setDirection(1);
     setIndex((prevIndex) => (prevIndex === TESTIMONIALS.length - 1 ? 0 : prevIndex + 1));
   };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      handleNext();
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [index]);
 
   const slideVariants = {
     enter: (dir: number) => ({

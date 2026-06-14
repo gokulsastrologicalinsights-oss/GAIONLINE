@@ -1,34 +1,78 @@
 "use client";
+
 import React, { useState } from "react";
+import { HelpCircle, ChevronDown, ChevronUp } from "lucide-react";
 
 const faqs = [
-  { q: "Which gemstone is suitable for me?", a: "The most suitable gemstone depends on your unique birth chart, planetary positions, and the areas of life you wish to strengthen. We recommend a consultation before wearing any stone." },
-  { q: "Can I wear gemstones without consultation?", a: "While possible, it is not recommended. Incorrectly wearing a gemstone can sometimes lead to adverse planetary effects. Professional guidance ensures you wear the right stone for your benefit." },
-  { q: "Are the gemstones natural?", a: "Yes, we exclusively provide 100% natural and untreated astrological gemstones. Each stone is carefully vetted for quality and planetary energy." },
-  { q: "How many carats should I wear?", a: "The required weight (carats) depends on your body weight, age, and the strength of the planet in your horoscope. Typically, 1 carat per 12kg of body weight is a general guideline, but precise calculation is better." },
-  { q: "Is online consultation available?", a: "Yes, we provide online astrological consultations worldwide via WhatsApp and Video call to help you select the perfect gemstone." },
+  {
+    q: "Which gemstone is suitable for me?",
+    a: "Gemstones should be selected based on horoscope analysis and individual requirements.",
+  },
+  {
+    q: "Are the gemstones natural?",
+    a: "Yes. We provide natural and premium-quality gemstones.",
+  },
+  {
+    q: "Will I receive wearing instructions?",
+    a: "Yes. Guidance for wearing the gemstone is provided.",
+  },
+  {
+    q: "Can I consult before purchasing?",
+    a: "Yes. Personalized consultation is available before purchase.",
+  },
 ];
 
 export default function FAQSection() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="gs-section gs-section-alt">
-      <div className="gs-container">
-        <div className="gs-section-header">
-          <span className="gs-section-tag">✦ FAQs ✦</span>
-          <h2 className="gs-section-h2">Common <span className="gs-gold">Questions</span></h2>
+    <section className="w-full py-20 bg-surface-light flex justify-center px-4 sm:px-6 lg:px-8 border-t border-border-subtle">
+      <div className="max-w-3xl mx-auto w-full">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <span className="text-amber-600 text-xs font-bold uppercase tracking-widest block mb-3">
+            ✦ FAQs ✦
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-primary font-bold mb-4">
+            Frequently Asked Questions
+          </h2>
+          <div className="flex items-center justify-center space-x-3 mb-6 opacity-75">
+            <div className="h-[1px] w-8 border-t border-primary"></div>
+            <span className="text-primary text-sm">✦</span>
+            <div className="h-[1px] w-8 border-t border-primary"></div>
+          </div>
         </div>
-        <div className="gs-faq-list">
-          {faqs.map((f, i) => (
-            <div key={i} className={`gs-faq-item ${open === i ? "gs-faq-open" : ""}`}>
-              <button className="gs-faq-q" onClick={() => setOpen(open === i ? null : i)}>
-                <span>{f.q}</span>
-                <span className="gs-faq-icon">{open === i ? "−" : "+"}</span>
-              </button>
-              {open === i && <div className="gs-faq-a">{f.a}</div>}
-            </div>
-          ))}
+
+        {/* Accordions */}
+        <div className="flex flex-col gap-4">
+          {faqs.map((f, i) => {
+            const isOpen = open === i;
+            return (
+              <div
+                key={i}
+                className="bg-white border border-slate-200/80 rounded-2xl overflow-hidden transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.01)]"
+              >
+                <button
+                  className="w-full flex justify-between items-center text-left py-5 px-6 font-serif font-extrabold text-sm sm:text-base text-primary hover:text-primary-light focus:outline-none transition-colors cursor-pointer"
+                  onClick={() => setOpen(isOpen ? null : i)}
+                >
+                  <span className="flex items-center gap-2.5">
+                    <HelpCircle className="w-4.5 h-4.5 text-primary shrink-0" />
+                    {f.q}
+                  </span>
+                  <span className="text-slate-400 shrink-0">
+                    {isOpen ? <ChevronUp className="w-5 h-5 text-primary" /> : <ChevronDown className="w-5 h-5" />}
+                  </span>
+                </button>
+
+                {isOpen && (
+                  <div className="px-6 pb-5 text-text-sub text-xs sm:text-sm leading-relaxed font-medium border-t border-slate-100/60 pt-4 animate-fadeIn">
+                    {f.a}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

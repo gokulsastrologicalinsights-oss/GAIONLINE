@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import HeroSection from "./components/HeroSection";
 import WhatYouGet from "./components/WhatYouGet";
+import WhatYouReceive from "./components/WhatYouReceive";
 import PricingSection from "./components/PricingSection";
 import ProcessTimeline from "./components/ProcessTimeline";
 import ConsultationForm from "./components/ConsultationForm";
@@ -25,6 +26,7 @@ export default function OnlineConsultationPage() {
     <div className="oc-root">
       <HeroSection />
       <WhatYouGet />
+      <WhatYouReceive />
       <PricingSection />
       <ProcessTimeline />
       <ConsultationForm />

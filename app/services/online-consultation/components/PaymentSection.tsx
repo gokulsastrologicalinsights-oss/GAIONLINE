@@ -21,14 +21,14 @@ export default function PaymentSection() {
         <div className="oc-section-header">
           <span className="oc-section-tag">✦ Step 2 ✦</span>
           <h2 className="oc-section-h2">Make <span className="oc-gold">Payment</span></h2>
-          <p className="oc-section-sub">Pay ₹1001 using any UPI app and send the screenshot on WhatsApp.</p>
+          <p className="oc-section-sub">Pay the fee for your chosen tier (Basic: ₹501 | Detailed: ₹1001 | Premium: ₹1501) using any UPI app and send the screenshot on WhatsApp.</p>
         </div>
         <div className="oc-payment-wrapper">
           <div className="oc-payment-card">
             <div className="oc-payment-glow" />
             <div className="oc-payment-amount">
-              <span className="oc-pay-label">Consultation Fee</span>
-              <span className="oc-pay-price">₹1001</span>
+              <span className="oc-pay-label">Consultation Fees</span>
+              <span className="oc-pay-price text-2xl sm:text-3xl block mt-1">Basic: ₹501 | Detailed: ₹1001 | Premium: ₹1501</span>
             </div>
             <div className="oc-payment-methods">
               {paymentMethods.map(pm => (
@@ -67,7 +67,7 @@ export default function PaymentSection() {
               />
             </div>
             <a
-              href={`${SOCIAL_LINKS.whatsapp}?text=${encodeURIComponent("Hello Gokul's Astrological Insights, I have completed the payment of ₹1001 for online consultation. Please find my payment screenshot attached.")}`}
+              href={`${SOCIAL_LINKS.whatsapp}?text=${encodeURIComponent("Hello Gokul's Astrological Insights, I have completed the payment for my online consultation. Please find my payment screenshot attached.")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="oc-btn-wa oc-btn-full"

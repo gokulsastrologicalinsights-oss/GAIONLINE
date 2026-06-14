@@ -12,20 +12,63 @@ const highlights = [
   "Personalized Remedies",
 ];
 
+const STARS = [
+  { left: "10%", top: "15%", delay: "0.2s", size: "2px" },
+  { left: "25%", top: "80%", delay: "1.4s", size: "3px" },
+  { left: "35%", top: "45%", delay: "0.8s", size: "1.5px" },
+  { left: "50%", top: "20%", delay: "2.1s", size: "2.5px" },
+  { left: "60%", top: "75%", delay: "1.7s", size: "2px" },
+  { left: "75%", top: "35%", delay: "0.5s", size: "3px" },
+  { left: "90%", top: "60%", delay: "1.1s", size: "1.5px" },
+  { left: "15%", top: "65%", delay: "2.4s", size: "2px" },
+  { left: "45%", top: "85%", delay: "0.3s", size: "3px" },
+  { left: "80%", top: "90%", delay: "1.9s", size: "1px" },
+  { left: "5%", top: "30%", delay: "0.7s", size: "2.5px" },
+  { left: "95%", top: "25%", delay: "1.3s", size: "2px" },
+  { left: "40%", top: "10%", delay: "2.5s", size: "1.5px" },
+  { left: "70%", top: "50%", delay: "0.1s", size: "3px" },
+  { left: "20%", top: "40%", delay: "1.6s", size: "2px" },
+  { left: "65%", top: "15%", delay: "2.2s", size: "1px" },
+  { left: "30%", top: "70%", delay: "0.9s", size: "2.5px" },
+  { left: "85%", top: "55%", delay: "1.8s", size: "3px" },
+  { left: "55%", top: "60%", delay: "0.4s", size: "1.5px" },
+  { left: "12%", top: "90%", delay: "1.5s", size: "2px" },
+  { left: "48%", top: "38%", delay: "2.0s", size: "3px" },
+  { left: "72%", top: "82%", delay: "0.6s", size: "1px" },
+  { left: "22%", top: "12%", delay: "1.0s", size: "2px" },
+  { left: "88%", top: "42%", delay: "2.3s", size: "2.5px" },
+  { left: "38%", top: "58%", delay: "0.8s", size: "3px" },
+  { left: "62%", top: "28%", delay: "1.2s", size: "1.5px" },
+  { left: "18%", top: "52%", delay: "1.7s", size: "2px" },
+  { left: "78%", top: "18%", delay: "2.6s", size: "2.5px" },
+  { left: "28%", top: "32%", delay: "0.3s", size: "1.5px" },
+  { left: "92%", top: "78%", delay: "1.1s", size: "3px" },
+  { left: "42%", top: "72%", delay: "1.5s", size: "2.5px" },
+  { left: "58%", top: "88%", delay: "2.2s", size: "1px" },
+  { left: "8%", top: "78%", delay: "0.9s", size: "2px" },
+  { left: "98%", top: "8%", delay: "1.4s", size: "2px" },
+  { left: "52%", top: "92%", delay: "1.8s", size: "3px" },
+  { left: "68%", top: "68%", delay: "0.5s", size: "1.5px" },
+  { left: "2%", top: "58%", delay: "2.1s", size: "2px" },
+  { left: "82%", top: "48%", delay: "1.0s", size: "2.5px" },
+  { left: "16%", top: "28%", delay: "2.4s", size: "1px" },
+  { left: "76%", top: "72%", delay: "0.7s", size: "3px" }
+];
+
 export default function HeroSection() {
   return (
     <section className="nc-hero">
       <div className="nc-stars" aria-hidden="true">
-        {Array.from({ length: 80 }).map((_, i) => (
+        {STARS.map((star, i) => (
           <span
             key={i}
             className="nc-star"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 4}s`,
-              width: `${Math.random() * 3 + 1}px`,
-              height: `${Math.random() * 3 + 1}px`,
+              left: star.left,
+              top: star.top,
+              animationDelay: star.delay,
+              width: star.size,
+              height: star.size,
             }}
           />
         ))}

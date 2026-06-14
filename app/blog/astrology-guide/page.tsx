@@ -27,7 +27,7 @@ export default function ArticlePage() {
 
         {/* Article Title */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-8 leading-tight">
-          Understanding Your Jathagam: A Beginner's Guide
+          {"Understanding Your Jathagam: A Beginner's Guide"}
         </h1>
 
         {/* Article Image Placeholder */}

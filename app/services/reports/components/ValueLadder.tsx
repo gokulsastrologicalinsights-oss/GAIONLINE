@@ -32,7 +32,7 @@ export default function ValueLadder() {
         </div>
         <div className="rp-ladder">
           {ladder.map((l, i) => (
-            <div key={l.level} className="rp-ladder-step" style={{"--accent": l.color} as any}>
+            <div key={l.level} className="rp-ladder-step" style={{"--accent": l.color} as React.CSSProperties}>
               <div className="rp-ladder-header">
                 <div className="rp-ladder-num">0{i+1}</div>
                 <h3 className="rp-ladder-title">{l.level}</h3>

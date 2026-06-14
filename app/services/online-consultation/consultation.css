@@ -20,155 +20,21 @@
 }
 .oc-section-sub { color: #94a3b8; max-width: 600px; margin: 0 auto; font-size: 1rem; line-height: 1.7; }
 
-/* ===================== HERO ===================== */
-.oc-hero {
-  position: relative; overflow: hidden;
-  background: linear-gradient(135deg, #020817 0%, #0a1628 40%, #071a2e 70%, #020817 100%);
-  min-height: 100vh; display: flex; align-items: center;
-}
-.oc-stars { position: absolute; inset: 0; pointer-events: none; }
-.oc-star {
-  position: absolute; background: white; border-radius: 50%;
-  animation: twinkle 3s ease-in-out infinite alternate;
-}
-@keyframes twinkle { 0% { opacity: 0.1; } 100% { opacity: 0.9; } }
+/* ===================== HERO (Tailwind Redesign) ===================== */
+/* The hero section is now redesigned and styled completely using Tailwind CSS classes. 
+   See app/services/online-consultation/components/HeroSection.tsx for details. */
 
-.oc-hero-inner {
-  position: relative; z-index: 2;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-  align-items: center; padding: 5rem 1.5rem; max-width: 1200px; margin: 0 auto; width: 100%;
-}
-.oc-badge-label {
-  display: inline-block; font-size: 0.75rem; letter-spacing: 0.2em;
-  color: #d4a017; text-transform: uppercase; margin-bottom: 1.5rem;
-}
-.oc-hero-h1 {
-  font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900;
-  color: #f1f5f9; line-height: 1.15; margin-bottom: 1.5rem;
-}
-.oc-hero-sub { color: #94a3b8; font-size: 1.1rem; line-height: 1.8; margin-bottom: 2.5rem; max-width: 520px; }
+/* ===================== SERVICE CARDS (Tailwind Redesign) ===================== */
+/* The service cards section is now redesigned and styled completely using Tailwind CSS classes.
+   See app/services/online-consultation/components/WhatYouGet.tsx for details. */
 
-.oc-cta-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
-.oc-btn-primary {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: linear-gradient(135deg, #d4a017, #f0c040);
-  color: #020817; font-weight: 800; font-size: 0.95rem;
-  padding: 0.85rem 2rem; border-radius: 50px; border: none;
-  cursor: pointer; text-decoration: none; transition: all 0.3s ease;
-  box-shadow: 0 0 20px rgba(212,160,23,0.4);
-}
-.oc-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 35px rgba(212,160,23,0.6); }
-.oc-btn-wa {
-  display: inline-flex; align-items: center; gap: 0.6rem;
-  background: linear-gradient(135deg, #25D366, #128C7E);
-  color: white; font-weight: 700; font-size: 0.95rem;
-  padding: 0.85rem 2rem; border-radius: 50px;
-  cursor: pointer; text-decoration: none; transition: all 0.3s ease;
-  box-shadow: 0 0 20px rgba(37,211,102,0.3);
-}
-.oc-btn-wa:hover { transform: translateY(-2px); box-shadow: 0 0 35px rgba(37,211,102,0.5); }
-.oc-btn-full { width: 100%; justify-content: center; }
-.oc-btn-large { padding: 1rem 2.5rem; font-size: 1.05rem; }
+/* ===================== PRICING (Tailwind Redesign) ===================== */
+/* The pricing section is now redesigned and styled completely using Tailwind CSS classes.
+   See app/services/online-consultation/components/PricingSection.tsx for details. */
 
-.oc-trust-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-.oc-trust-item {
-  background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.2);
-  color: #cbd5e1; font-size: 0.78rem; padding: 0.4rem 0.9rem; border-radius: 50px;
-}
-
-/* Hero Visual / Orb */
-.oc-hero-visual { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
-.oc-astro-orb { position: relative; width: 280px; height: 280px; display: flex; align-items: center; justify-content: center; }
-.oc-orb-ring {
-  position: absolute; border-radius: 50%; border: 1px solid rgba(212,160,23,0.3);
-  animation: rotate 20s linear infinite;
-}
-.oc-orb-ring-1 { width: 100%; height: 100%; animation-duration: 20s; }
-.oc-orb-ring-2 { width: 75%; height: 75%; animation-duration: 15s; animation-direction: reverse; border-color: rgba(59,130,246,0.3); }
-.oc-orb-ring-3 { width: 50%; height: 50%; animation-duration: 10s; border-color: rgba(16,185,129,0.3); }
-@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-.oc-orb-center {
-  position: relative; z-index: 2; text-align: center;
-  background: radial-gradient(circle, rgba(212,160,23,0.15), transparent);
-  border-radius: 50%; padding: 1.5rem;
-}
-.oc-orb-name { display: block; color: #d4a017; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; margin-top: 0.5rem; line-height: 1.4; }
-.oc-zodiac-strip { display: flex; gap: 1rem; font-size: 1.4rem; opacity: 0.5; flex-wrap: wrap; justify-content: center; }
-.oc-zodiac-sym { animation: float 3s ease-in-out infinite alternate; }
-.oc-zodiac-sym:nth-child(even) { animation-direction: alternate-reverse; }
-@keyframes float { 0% { transform: translateY(0); } 100% { transform: translateY(-8px); } }
-
-/* ===================== SERVICE CARDS ===================== */
-.oc-cards-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;
-}
-.oc-service-card {
-  position: relative; overflow: hidden;
-  background: rgba(255,255,255,0.03); border: 1px solid rgba(212,160,23,0.15);
-  border-radius: 16px; padding: 2rem; transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-.oc-service-card:hover { transform: translateY(-5px); border-color: rgba(212,160,23,0.4); background: rgba(212,160,23,0.06); }
-.oc-service-card:hover .oc-card-glow { opacity: 1; }
-.oc-card-glow {
-  position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-  background: radial-gradient(circle, rgba(212,160,23,0.08), transparent 60%);
-  opacity: 0; transition: opacity 0.4s ease; pointer-events: none;
-}
-.oc-card-icon { font-size: 2.2rem; margin-bottom: 1rem; }
-.oc-card-title { font-size: 1.05rem; font-weight: 700; color: #f1f5f9; margin-bottom: 0.6rem; }
-.oc-card-desc { color: #94a3b8; font-size: 0.88rem; line-height: 1.7; }
-
-/* ===================== PRICING ===================== */
-.oc-pricing-wrapper { display: flex; justify-content: center; }
-.oc-pricing-card {
-  position: relative; overflow: hidden;
-  background: rgba(255,255,255,0.03); border: 1px solid rgba(212,160,23,0.3);
-  border-radius: 24px; padding: 3rem; max-width: 480px; width: 100%;
-  backdrop-filter: blur(20px); box-shadow: 0 0 60px rgba(212,160,23,0.1);
-}
-.oc-pricing-glow {
-  position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
-  width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(212,160,23,0.15), transparent 70%);
-  pointer-events: none;
-}
-.oc-pricing-top { text-align: center; margin-bottom: 2rem; }
-.oc-pricing-label { display: block; color: #94a3b8; font-size: 0.85rem; margin-bottom: 1rem; }
-.oc-pricing-amount { display: flex; align-items: baseline; justify-content: center; gap: 0.3rem; }
-.oc-price-currency { font-size: 2rem; color: #d4a017; font-weight: 700; }
-.oc-price-value { font-size: 5rem; font-weight: 900; color: #d4a017; line-height: 1; }
-.oc-price-only { font-size: 1.2rem; color: #94a3b8; }
-.oc-pricing-list { list-style: none; padding: 0; margin: 0 0 2rem; space-y: 0.75rem; }
-.oc-pricing-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0; color: #cbd5e1; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
-.oc-check { color: #d4a017; font-size: 0.8rem; }
-.oc-pricing-note {
-  background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.2);
-  border-radius: 10px; padding: 1rem; font-size: 0.85rem; color: #d4a017;
-  margin-bottom: 1.5rem; line-height: 1.6;
-}
-
-/* ===================== TIMELINE ===================== */
-.oc-timeline {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem; position: relative;
-}
-.oc-timeline-step {
-  position: relative; text-align: center;
-  background: rgba(255,255,255,0.03); border: 1px solid rgba(59,130,246,0.2);
-  border-radius: 16px; padding: 2rem 1.5rem; transition: all 0.3s;
-}
-.oc-timeline-step:hover { border-color: rgba(212,160,23,0.4); transform: translateY(-4px); }
-.oc-step-num {
-  font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em;
-  color: #d4a017; margin-bottom: 0.75rem;
-}
-.oc-step-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-.oc-step-title { font-size: 1rem; font-weight: 700; color: #f1f5f9; margin-bottom: 0.5rem; }
-.oc-step-desc { color: #94a3b8; font-size: 0.85rem; line-height: 1.6; }
-.oc-step-connector {
-  display: none;
-}
+/* ===================== TIMELINE (Tailwind Redesign) ===================== */
+/* The timeline section is now redesigned and styled completely using Tailwind CSS classes.
+   See app/services/online-consultation/components/ProcessTimeline.tsx for details. */
 
 /* ===================== FORM ===================== */
 .oc-form {
@@ -253,84 +119,21 @@
 .oc-upload-hint { font-size: 0.75rem; color: #64748b; }
 .oc-file-input { display: none; }
 
-/* ===================== WHY CHOOSE US ===================== */
-.oc-why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-.oc-why-card {
-  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 16px; padding: 2rem; transition: all 0.3s;
-}
-.oc-why-card:hover { border-color: rgba(212,160,23,0.3); transform: translateY(-4px); background: rgba(212,160,23,0.04); }
-.oc-why-icon { font-size: 2rem; margin-bottom: 1rem; }
-.oc-why-title { font-size: 1rem; font-weight: 700; color: #f1f5f9; margin-bottom: 0.5rem; }
-.oc-why-desc { color: #94a3b8; font-size: 0.87rem; line-height: 1.7; }
+/* ===================== WHY CHOOSE US (Tailwind Redesign) ===================== */
+/* The why-choose-us section is now redesigned and styled completely using Tailwind CSS classes. 
+   See app/services/online-consultation/components/WhyChooseUs.tsx for details. */
 
-/* ===================== TESTIMONIALS ===================== */
-.oc-testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
-.oc-testi-card {
-  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px; padding: 1.5rem; transition: all 0.3s;
-}
-.oc-testi-card:hover { border-color: rgba(212,160,23,0.3); transform: translateY(-3px); }
-.oc-testi-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
-.oc-testi-avatar {
-  width: 44px; height: 44px; border-radius: 50%;
-  background: linear-gradient(135deg, #d4a017, #f0c040);
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 800; color: #020817; font-size: 1.1rem; flex-shrink: 0;
-}
-.oc-testi-name { font-weight: 700; color: #f1f5f9; font-size: 0.95rem; }
-.oc-testi-location { color: #64748b; font-size: 0.8rem; }
-.oc-testi-wa { margin-left: auto; }
-.oc-testi-stars { color: #d4a017; font-size: 0.9rem; margin-bottom: 0.75rem; letter-spacing: 2px; }
-.oc-testi-text { color: #94a3b8; font-size: 0.88rem; line-height: 1.7; font-style: italic; }
-.oc-video-placeholder {
-  background: rgba(255,255,255,0.03); border: 2px dashed rgba(212,160,23,0.2);
-  border-radius: 20px; padding: 3rem; text-align: center;
-}
-.oc-video-inner { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
-.oc-play-btn {
-  width: 64px; height: 64px; background: linear-gradient(135deg, #d4a017, #f0c040);
-  border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  font-size: 1.5rem; color: #020817; cursor: pointer;
-  box-shadow: 0 0 30px rgba(212,160,23,0.4);
-}
-.oc-video-label { color: #cbd5e1; font-weight: 600; font-size: 1rem; }
-.oc-video-sub { color: #64748b; font-size: 0.85rem; }
+/* ===================== TESTIMONIALS (Tailwind Redesign) ===================== */
+/* The testimonials section is now redesigned and styled completely using Tailwind CSS classes.
+   See app/services/online-consultation/components/Testimonials.tsx for details. */
 
-/* ===================== FAQ ===================== */
-.oc-faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.75rem; }
-.oc-faq-item {
-  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 12px; overflow: hidden; transition: border-color 0.3s;
-}
-.oc-faq-open { border-color: rgba(212,160,23,0.35); }
-.oc-faq-q {
-  width: 100%; display: flex; justify-content: space-between; align-items: center;
-  padding: 1.1rem 1.5rem; background: transparent; border: none; cursor: pointer;
-  color: #f1f5f9; font-size: 0.97rem; font-weight: 600; text-align: left; gap: 1rem;
-}
-.oc-faq-q:hover { color: #d4a017; }
-.oc-faq-icon { color: #d4a017; font-size: 1.3rem; flex-shrink: 0; }
-.oc-faq-a { padding: 0 1.5rem 1.25rem; color: #94a3b8; font-size: 0.9rem; line-height: 1.8; }
+/* ===================== FAQ (Tailwind Redesign) ===================== */
+/* The FAQ section is now redesigned and styled completely using Tailwind CSS classes.
+   See app/services/online-consultation/components/FAQSection.tsx for details. */
 
-/* ===================== FINAL CTA ===================== */
-.oc-final-cta {
-  position: relative; overflow: hidden;
-  background: linear-gradient(135deg, #050d1f 0%, #0a1a30 50%, #050d1f 100%);
-  padding: 6rem 0; text-align: center;
-}
-.oc-cta-glow {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  width: 600px; height: 400px;
-  background: radial-gradient(ellipse, rgba(212,160,23,0.12), transparent 70%);
-  pointer-events: none;
-}
-.oc-cta-stars { display: flex; justify-content: center; gap: 1.5rem; font-size: 1.2rem; opacity: 0.2; margin-bottom: 2rem; flex-wrap: wrap; }
-.oc-cta-zodiac { animation: float 4s ease-in-out infinite alternate; }
-.oc-cta-inner { position: relative; z-index: 2; }
-.oc-cta-h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; color: #f1f5f9; margin: 1rem 0; line-height: 1.3; }
-.oc-cta-sub { color: #94a3b8; font-size: 1rem; margin-bottom: 2.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
-.oc-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+/* ===================== FINAL CTA (Tailwind Redesign) ===================== */
+/* The final CTA section is now redesigned and styled completely using Tailwind CSS classes.
+   See app/services/online-consultation/components/FinalCTA.tsx for details. */
 
 /* ===================== FOOTER ===================== */
 .oc-page-footer { background: #010810; border-top: 1px solid rgba(212,160,23,0.15); padding: 4rem 0 2rem; }

@@ -40,7 +40,7 @@ export default function ServicePackages({ onSelect }: ServicePackagesProps) {
         </div>
         <div className="sp-packages-grid">
           {packages.map((pkg) => (
-            <div key={pkg.title} className="sp-pkg-card" style={{"--accent": pkg.color} as any}>
+            <div key={pkg.title} className="sp-pkg-card" style={{"--accent": pkg.color} as React.CSSProperties}>
               <div className="sp-pkg-header">
                 <h3 className="sp-pkg-title">{pkg.title}</h3>
                 <div className="sp-pkg-price">₹{pkg.price}</div>
