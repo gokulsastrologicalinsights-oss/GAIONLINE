@@ -6,6 +6,7 @@ export const SOCIAL_LINKS = {
   instagram_handle: "@gokuls_astrological_insights_",
   facebook_display: "Gokul's Astrological Insights",
   whatsapp_chat_text: "Chat with Astrologer Gokul",
+  youtube: "https://www.youtube.com/@GokulsAstrologicalInsights",
 };
 
 export const CONTACT_INFO = {

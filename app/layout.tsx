@@ -3,7 +3,7 @@ import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import FloatingWhatsApp from "./components/FloatingWhatsApp";
+import FloatingActions from "./components/FloatingActions";
 import { SOCIAL_LINKS, CONTACT_INFO } from "./constants";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -81,7 +81,7 @@ export default function RootLayout({
         className={`${plusJakarta.variable} ${playfair.variable} antialiased font-sans bg-white text-text-main`}>
         <Navbar />
         {children}
-        <FloatingWhatsApp />
+        <FloatingActions />
         <Footer />
       </body>
     </html>

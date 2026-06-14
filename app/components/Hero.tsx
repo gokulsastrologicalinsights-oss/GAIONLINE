@@ -1,107 +1,148 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import { Check, Sparkles } from "lucide-react";
 import { SOCIAL_LINKS, CONTACT_INFO } from "../constants";
 
+const HERO_IMAGES = [
+  "/images/Gokul-image-vertical.jpeg",
+  "/images/Gokul-Image-2.jpeg",
+  "/images/Gokul-image-1.jpeg",
+];
+
 export default function Hero() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % HERO_IMAGES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const trustHighlights = [
+    "Accurate Horoscope Analysis",
+    "Marriage Matching",
+    "Career & Business Guidance",
+    "Property & Vehicle Predictions",
+    "Pariharam Solutions",
+    "Online Consultation Available",
+  ];
+
   return (
-    <section className="relative w-full min-h-[85vh] flex flex-col justify-between overflow-hidden bg-surface-light border-b border-border-subtle">
-      {/* Background radial gradient overlay */}
-      <div className="absolute inset-0 opacity-40 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-surface-light to-border-subtle pointer-events-none"></div>
+    <section className="relative w-full min-h-[85vh] flex flex-col justify-center overflow-hidden bg-gradient-to-b from-surface-light via-white to-surface-light border-b border-slate-100 py-12 lg:py-20">
+      {/* Background radial glow */}
+      <div className="absolute inset-0 opacity-40 bg-[radial-gradient(ellipse_at_top_left,rgba(54,61,133,0.12)_0%,transparent_60%)] pointer-events-none"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12 lg:pt-16 lg:pb-16 flex flex-col lg:flex-row items-center justify-between w-full flex-grow gap-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
         
-        {/* Left Content */}
-        <div className="max-w-2xl text-center lg:text-left mb-6 lg:mb-0 flex flex-col justify-center flex-1">
-          <h1 className="text-primary text-4xl sm:text-5xl lg:text-6xl font-serif font-extrabold mb-4 tracking-tight leading-tight">
-            Gokul&apos;s Astrological Insights
+        {/* Left Side: Professional Image Slider */}
+        <div className="w-full lg:w-[48%] flex justify-center items-center max-w-md lg:max-w-[460px] xl:max-w-[500px] flex-shrink-0">
+          <div className="relative w-full aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.12)] border-[6px] border-white bg-slate-50 ring-1 ring-slate-100 group">
+            {HERO_IMAGES.map((src, index) => (
+              <div
+                key={src}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                  index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+                }`}
+              >
+                <Image
+                  src={src}
+                  alt={`Astrologer Gokul Murugan - Slide ${index + 1}`}
+                  fill
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-103"
+                  priority={index === 0}
+                  sizes="(max-w-768px) 100vw, 45vw"
+                />
+              </div>
+            ))}
+            {/* Ambient vignette */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent z-20 pointer-events-none"></div>
+
+            {/* Slide Indicators */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-30 bg-black/30 backdrop-blur-xs px-2.5 py-1.5 rounded-full">
+              {HERO_IMAGES.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                    index === currentIndex ? "bg-white w-4" : "bg-white/50"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Right Side: Copywriting & Conversions */}
+        <div className="w-full lg:w-[48%] flex flex-col justify-center text-center lg:text-left flex-grow">
+          {/* Small Heading */}
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-primary text-xs sm:text-sm font-bold uppercase tracking-wider mb-4 mx-auto lg:mx-0 w-fit">
+            <Sparkles className="w-3.5 h-3.5 fill-current text-amber-500" />
+            <span>Gokul&apos;s Astrological Insights</span>
+          </div>
+
+          {/* Main Heading */}
+          <h1 className="text-primary text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-serif font-extrabold mb-4 tracking-tight leading-tight">
+            Accurate Tamil Astrology for Marriage, Career &amp; Life Guidance
           </h1>
-          <h2 className="text-text-main text-xl sm:text-2xl font-medium mb-6 font-serif leading-relaxed text-slate-800">
-            Trusted Astrology Guidance for Life, Career &amp; Marriage
+
+          {/* Subheading */}
+          <h2 className="text-text-sub text-base sm:text-lg lg:text-xl font-medium mb-8 leading-relaxed max-w-2xl">
+            Personalized Horoscope Analysis &bull; Marriage Matching &bull; Career Guidance &bull; Pariharam Solutions
           </h2>
-          
-          <p className="text-text-sub text-base sm:text-lg mb-8 leading-relaxed font-semibold tracking-wide">
-            Accurate Predictions • Jathagam Analysis • Marriage Matching • Vastu Consultation
-          </p>
-
-          {/* Trust Badges */}
-          <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8">
-            <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary/5 text-primary text-xs sm:text-sm font-bold border border-primary/10 shadow-sm hover:bg-primary/10 transition-colors duration-300">
-              <span className="text-[#fbbf24] text-sm">★</span> Accurate Predictions
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary/5 text-primary text-xs sm:text-sm font-bold border border-primary/10 shadow-sm hover:bg-primary/10 transition-colors duration-300">
-              <span className="text-[#fbbf24] text-sm">★</span> Personal Guidance
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary/5 text-primary text-xs sm:text-sm font-bold border border-primary/10 shadow-sm hover:bg-primary/10 transition-colors duration-300">
-              <span className="text-[#fbbf24] text-sm">★</span> Trusted Service
-            </span>
-          </div>
-
-          {/* Call details */}
-          <div className="mb-8">
-            <a
-              href={`tel:${CONTACT_INFO.phone_tel}`}
-              className="inline-flex items-center gap-2.5 text-primary text-xl sm:text-2xl font-extrabold hover:text-primary-light transition-colors duration-300"
-            >
-              <span className="text-2xl">📞</span> Call / WhatsApp: <span className="underline decoration-dotted decoration-primary/40">{CONTACT_INFO.phone}</span>
-            </a>
-          </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10 w-full max-w-lg lg:max-w-none mx-auto lg:mx-0">
+            {/* Book Consultation */}
             <a
               href="/services/online-consultation"
-              className="px-8 py-4 bg-primary text-white font-bold rounded-lg shadow-lg hover:bg-primary-light hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 text-center text-base tracking-wide"
+              className="flex-1 sm:flex-none px-8 py-4 bg-primary text-white font-extrabold rounded-xl shadow-lg shadow-primary/20 hover:bg-primary-light hover:shadow-xl hover:scale-[1.02] active:scale-98 transition-all duration-300 text-center text-base tracking-wide flex items-center justify-center gap-2 cursor-pointer"
             >
-              Book Consultation
+              <span>🔮</span> Book Consultation
             </a>
+
+            {/* WhatsApp Now */}
             <a
               href={SOCIAL_LINKS.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary/5 active:bg-primary/10 transition-all duration-300 transform hover:-translate-y-0.5 text-center text-base tracking-wide"
+              className="flex-1 sm:flex-none px-8 py-4 bg-[#25D366] text-white font-extrabold rounded-xl shadow-lg shadow-green-500/20 hover:bg-[#20ba5a] hover:shadow-xl hover:scale-[1.02] active:scale-98 transition-all duration-300 text-center text-base tracking-wide flex items-center justify-center gap-2 cursor-pointer"
             >
-              WhatsApp Now
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              <span>WhatsApp Now</span>
+            </a>
+
+            {/* Call Now */}
+            <a
+              href={`tel:${CONTACT_INFO.phone_tel}`}
+              className="flex-1 sm:flex-none px-8 py-4 border-2 border-primary/20 text-primary hover:text-white font-extrabold rounded-xl hover:bg-primary hover:border-primary active:scale-98 transition-all duration-300 text-center text-base tracking-wide flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <span>📞</span> Call Now
             </a>
           </div>
-        </div>
 
-        {/* Right Content - Image with Badge */}
-        <div className="relative flex justify-center items-center w-full lg:w-1/2 flex-1">
-          {/* Main Arched Image */}
-          <div className="relative w-72 h-[420px] md:w-80 md:h-[480px] lg:w-[380px] lg:h-[500px] aspect-[3/4] rounded-t-[200px] rounded-b-[200px] border-[8px] border-white shadow-2xl overflow-hidden bg-slate-100 z-10 flex items-center justify-center ring-1 ring-black/5">
-            <Image 
-              src="/images/Gokul-image-vertical.jpeg"
-              alt="Astrologer Gokul Murugan" 
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-w-768px) 320px, 380px"
-            />
-          </div>
-          
-          {/* Floating circular badge */}
-          <div className="absolute bottom-6 right-2 md:right-8 lg:right-4 z-20 bg-white/95 backdrop-blur-sm rounded-full w-28 h-28 sm:w-32 sm:h-32 flex flex-col justify-center items-center shadow-[0_10px_30px_rgba(0,0,0,0.15)] border border-primary/10 p-3 transform hover:scale-105 transition-transform duration-300">
-            <span className="text-[#fbbf24] text-xl sm:text-2xl mb-0.5">🏆</span>
-            <span className="text-primary font-extrabold text-xl sm:text-2xl leading-none">1000+</span>
-            <span className="text-text-sub font-bold text-[8px] sm:text-[9px] text-center uppercase tracking-wider mt-1.5 leading-tight">Happy Clients</span>
-          </div>
-        </div>
-
-      </div>
-
-      {/* Bottom Marquee */}
-      <div className="relative z-20 w-full bg-primary text-white py-3.5 overflow-hidden border-t-4 border-primary-light">
-        <div className="marquee-content animate-marquee">
-          {[...Array(3)].map((_, index) => (
-            <div key={index} className="flex whitespace-nowrap items-center min-w-full justify-around font-medium md:text-lg">
-              <span className="mx-4 text-white/70 text-xl">✽</span>
-              <span className="mx-4 tracking-wide">Expert in Astrological Solutions and Life Guidance</span>
-              <span className="mx-4 text-white/70 text-xl">✽</span>
-              <span className="mx-4 tracking-wide">Decode your problems, revive your life</span>
-              <span className="mx-4 text-white/70 text-xl">✽</span>
-              <span className="mx-4 tracking-wide">Gokul&apos;s Astrological Insights — Accurate Predictions &amp; Trusted Guidance</span>
+          {/* Trust Highlights Grid */}
+          <div className="border-t border-slate-100 pt-8 w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-3.5 gap-x-6">
+              {trustHighlights.map((highlight, index) => (
+                <div key={index} className="flex items-center gap-2.5 justify-center lg:justify-start">
+                  <div className="w-5 h-5 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0 border border-green-100">
+                    <Check className="w-3 h-3 stroke-[3]" />
+                  </div>
+                  <span className="text-text-main font-bold text-sm tracking-wide">
+                    {highlight}
+                  </span>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
+
       </div>
     </section>
   );

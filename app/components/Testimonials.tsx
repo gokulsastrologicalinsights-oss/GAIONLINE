@@ -1,80 +1,189 @@
-import React from "react";
+"use client";
+
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
+
+interface Testimonial {
+  name: string;
+  location: string;
+  text: string;
+  rating: number;
+  avatar: string;
+}
+
+const TESTIMONIALS: Testimonial[] = [
+  {
+    name: "Ramesh Kumar",
+    location: "Chennai",
+    text: "Very accurate predictions and excellent guidance. Astrologer Gokul's Jathagam analysis helped me clear my career doubts completely.",
+    rating: 5,
+    avatar: "/images/client-1.png",
+  },
+  {
+    name: "Anand Krishnan",
+    location: "Bangalore",
+    text: "Professional and quick response. He patiently answered all my questions regarding property purchase pariharams. Highly recommended!",
+    rating: 5,
+    avatar: "/images/client-3.png",
+  },
+  {
+    name: "Priyadarshini S.",
+    location: "Coimbatore",
+    text: "Marriage matching service was very helpful. The details and checks they perform are very thorough and gave us great peace of mind.",
+    rating: 5,
+    avatar: "/images/client-2.png",
+  },
+];
 
 export default function Testimonials() {
-  const testimonials = [
-    {
-      location: "Chennai",
-      text: "Very accurate predictions and excellent guidance.",
-      rating: 5,
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      handleNext();
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [index]);
+
+  const handlePrev = () => {
+    setDirection(-1);
+    setIndex((prevIndex) => (prevIndex === 0 ? TESTIMONIALS.length - 1 : prevIndex - 1));
+  };
+
+  const handleNext = () => {
+    setDirection(1);
+    setIndex((prevIndex) => (prevIndex === TESTIMONIALS.length - 1 ? 0 : prevIndex + 1));
+  };
+
+  const slideVariants = {
+    enter: (dir: number) => ({
+      x: dir > 0 ? 100 : -100,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
     },
-    {
-      location: "Coimbatore",
-      text: "Professional consultation and valuable advice.",
-      rating: 5,
-    },
-    {
-      location: "Bangalore",
-      text: "Helpful guidance for marriage and career decisions.",
-      rating: 5,
-    },
-  ];
+    exit: (dir: number) => ({
+      x: dir > 0 ? -100 : 100,
+      opacity: 0,
+    }),
+  };
+
+  const current = TESTIMONIALS[index];
 
   return (
-    <section className="bg-surface-light w-full py-20 flex flex-col items-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center">
+    <section className="bg-white w-full py-24 flex flex-col items-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="max-w-4xl mx-auto w-full flex flex-col items-center">
         {/* Header */}
         <div className="text-center mb-16">
-          <h3 className="text-primary font-bold text-sm tracking-widest uppercase mb-3">
-            Client Testimonials
-          </h3>
-          <h2 className="text-text-main text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-primary leading-tight">
+          <div className="inline-flex items-center gap-1 bg-primary/5 px-3 py-1 rounded-full border border-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4">
+            <Star className="w-3.5 h-3.5 fill-current text-primary" />
+            <span>Client Reviews</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-primary-dark font-extrabold mb-4">
             What Our Clients Say
           </h2>
-          {/* Separator */}
-          <div className="flex items-center justify-center space-x-3 mt-4 opacity-75">
+          <div className="flex items-center justify-center space-x-3 mb-6 opacity-75">
             <div className="h-[1px] w-8 border-t border-primary"></div>
-            <span className="text-[#fbbf24] text-lg">★</span>
+            <span className="text-primary text-sm">✦</span>
             <div className="h-[1px] w-8 border-t border-primary"></div>
           </div>
         </div>
 
-        {/* 3 Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-border-subtle hover:border-primary/10 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
-            >
-              <div>
-                {/* 5 Stars */}
-                <div className="flex text-[#fbbf24] mb-5 gap-1">
-                  {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+        {/* Carousel Container */}
+        <div className="relative w-full max-w-3xl min-h-[320px] bg-white rounded-2xl p-8 md:p-12 border border-border-subtle shadow-[0_10px_35px_rgba(0,0,0,0.06)] flex flex-col justify-between">
+          <Quote className="absolute top-6 left-8 w-14 h-14 text-slate-100 fill-current -z-0 pointer-events-none" />
+
+          {/* Testimonial Content */}
+          <div className="relative z-10 flex-grow flex items-center justify-center">
+            <AnimatePresence initial={false} custom={direction} mode="wait">
+              <motion.div
+                key={index}
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="w-full flex flex-col items-center text-center"
+              >
+                {/* Stars */}
+                <div className="flex text-amber-500 mb-6 gap-1">
+                  {Array.from({ length: current.rating }).map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-current stroke-none" />
                   ))}
                 </div>
 
-                {/* Review Text */}
-                <p className="text-text-main text-base md:text-lg font-medium italic leading-relaxed mb-6 font-serif relative z-10">
-                  <span className="text-4xl text-primary/10 absolute -top-4 -left-2 select-none">&ldquo;</span>
-                  {testimonial.text}
-                  <span className="text-4xl text-primary/10 absolute -bottom-8 right-2 select-none">&rdquo;</span>
+                {/* Quote Text */}
+                <p className="text-text-main text-lg md:text-xl font-medium font-serif leading-relaxed mb-8 italic max-w-2xl">
+                  &ldquo;{current.text}&rdquo;
                 </p>
-              </div>
 
-              {/* Client Info */}
-              <div className="flex items-center border-t border-border-subtle pt-5 mt-auto">
-                <div className="w-10 h-10 rounded-full bg-primary/5 text-primary font-bold text-sm flex items-center justify-center mr-3 border border-primary/10">
-                  {testimonial.location.charAt(0)}
+                {/* Client Profile */}
+                <div className="flex items-center gap-4 mt-auto">
+                  <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-primary/20 shadow-inner">
+                    <Image
+                      src={current.avatar}
+                      alt={current.name}
+                      fill
+                      className="object-cover"
+                      sizes="56px"
+                    />
+                  </div>
+                  <div className="text-left">
+                    <h4 className="text-primary font-serif font-extrabold text-base leading-tight">
+                      {current.name}
+                    </h4>
+                    <p className="text-text-sub text-xs font-semibold uppercase tracking-wider mt-0.5">
+                      Verified Client &bull; {current.location}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-primary font-serif font-bold text-sm">Verified Client</h4>
-                  <p className="text-text-sub text-xs font-semibold">— {testimonial.location}</p>
-                </div>
-              </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Navigation Controls */}
+          <div className="flex justify-between items-center mt-10 relative z-20">
+            {/* Dots */}
+            <div className="flex gap-2">
+              {TESTIMONIALS.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => {
+                    setDirection(i > index ? 1 : -1);
+                    setIndex(i);
+                  }}
+                  className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                    i === index ? "bg-primary w-6" : "bg-slate-200 w-2.5"
+                  }`}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
+              ))}
             </div>
-          ))}
+
+            {/* Buttons */}
+            <div className="flex gap-3">
+              <button
+                onClick={handlePrev}
+                className="w-10 h-10 rounded-full border border-slate-200 text-text-sub hover:bg-primary/5 hover:text-primary hover:border-primary-light/30 active:scale-90 transition-all flex items-center justify-center cursor-pointer"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={handleNext}
+                className="w-10 h-10 rounded-full border border-slate-200 text-text-sub hover:bg-primary/5 hover:text-primary hover:border-primary-light/30 active:scale-90 transition-all flex items-center justify-center cursor-pointer"
+                aria-label="Next slide"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
