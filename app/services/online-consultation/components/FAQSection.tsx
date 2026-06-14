@@ -5,27 +5,27 @@ import { useState } from "react";
 const faqs = [
   {
     q: "Is online consultation effective?",
-    a: "Yes, online consultation is just as effective as in-person consultation. As long as you provide accurate birth details, the horoscope analysis, planetary predictions, and suggested remedies are identical and highly accurate.",
+    a: "Yes. With accurate birth details, the horoscope analysis, predictions, and remedies are identical to in-person sessions and highly precise.",
   },
   {
     q: "Which languages are available?",
-    a: "Consultations are available in both Tamil and English. You can comfortably choose your preferred language during your scheduled audio or video call session.",
+    a: "We consult in Tamil and English. You can comfortably choose your preferred language during your audio or video session.",
   },
   {
     q: "Can I consult from abroad?",
-    a: "Absolutely. We provide online consultations to clients worldwide, including the USA, UK, Canada, UAE, Singapore, and Australia. The sessions are conducted seamlessly via WhatsApp call or video call.",
+    a: "Yes. We consult globally (including USA, UK, Canada, UAE, Singapore) via WhatsApp audio or video calls.",
   },
   {
     q: "Will remedies be provided?",
-    a: "Yes, practical, simple, and highly effective remedies (pariharams), mantras, and gemstone suggestions will be recommended based strictly on your Jathagam chart to help resolve your difficulties.",
+    a: "Yes. Practical remedies, mantras, and gemstone suggestions are tailored strictly to your birth chart.",
   },
   {
     q: "How long is the consultation?",
-    a: "A typical consultation session lasts about 30 to 45 minutes, providing ample time to discuss your queries, career path, marriage timing, and remedies in detail.",
+    a: "Sessions last 30 to 45 minutes, providing ample time to discuss your questions, chart, and remedies.",
   },
   {
     q: "Is my information confidential?",
-    a: "Absolutely. Your personal details, birth chart details, and all discussions during the consultation are kept 100% private and confidential.",
+    a: "Yes. Your personal details, birth chart details, and all discussions are kept 100% private and confidential.",
   },
 ];
 
