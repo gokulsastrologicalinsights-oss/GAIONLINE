@@ -16,12 +16,12 @@ export default function Footer() {
           {/* Column 1: About */}
           <div className="flex flex-col space-y-5">
             <div className="flex items-center gap-3">
-              <Link href="/" className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-slate-800 bg-white p-0.5 shadow-inner">
+              <Link href="/" className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-slate-800 shadow-inner">
                 <Image
                   src={LOGO_SRC}
                   alt="Gokul's Astrological Insights"
                   fill
-                  className="object-contain"
+                  className="object-cover scale-[1.15]"
                   sizes="48px"
                 />
               </Link>

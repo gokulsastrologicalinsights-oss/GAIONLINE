@@ -55,7 +55,7 @@ export default function Navbar() {
                 src={LOGO_SRC}
                 alt="Gokul's Astrological Insights"
                 fill
-                className="object-contain p-0.5"
+                className="object-cover scale-[1.15]"
                 priority
                 sizes="56px"
               />
